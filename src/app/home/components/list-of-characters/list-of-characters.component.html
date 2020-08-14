@@ -1,0 +1,12 @@
+<main
+  class="characters-grid"
+  infinite-scroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+>
+  <app-character
+    *ngFor="let character of characters"
+    [character]="character"
+  ></app-character>
+</main>
