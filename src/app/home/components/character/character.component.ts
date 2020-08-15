@@ -16,7 +16,7 @@ export class CharacterComponent implements OnInit {
 
   getEpisode() {
     this.characterService
-      .getEpisode(this.character)
+      .getFirstEpisode(this.character)
       .subscribe((episode) => (this.episode = episode));
   }
 

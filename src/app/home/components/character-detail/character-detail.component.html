@@ -1,4 +1,4 @@
-<article>
+<article *ngIf="character$ | async as character">
   <div class="image-container">
     <img [src]="character.image" [alt]="character.name" />
   </div>
@@ -13,8 +13,12 @@
       </span>
     </section>
     <section>
-      <span class="sub-title">Last known location:</span>
+      <span class="sub-title">Origin:</span>
       <a href="#">{{ character.origin.name }}</a>
+    </section>
+    <section>
+      <span class="sub-title">Last known location:</span>
+      <a href="#">{{ character.location.name }}</a>
     </section>
     <section>
       <span class="sub-title">First seen in:</span>
