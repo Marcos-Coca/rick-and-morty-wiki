@@ -15,6 +15,9 @@ export class CharacterService {
   getCharacters() {
     return this.http.get<ApiResponse>(`${environment.api_url}/character/ `);
   }
+  getCharacter(id: string) {
+    return this.http.get<Character>(`${environment.api_url}/character/${id}`);
+  }
 
   getPage(page: number) {
     return this.http.get<ApiResponse>(
@@ -22,7 +25,13 @@ export class CharacterService {
     );
   }
 
-  getEpisode(character: Character) {
+  getFirstEpisode(character: Character) {
     return this.http.get<Episode>(character.episode[0]);
   }
+
+  getEpisode(url: string) {
+    return this.http.get<Episode>(url);
+  }
+
+  getAllEpisode(character: Character) {}
 }
