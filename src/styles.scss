@@ -1,12 +1,23 @@
+@import "./styles/globals";
+
+:root {
+  --primaryColor: #202329;
+  --secondColor: #ffffff;
+  --thirdColor: rgb(255, 152, 0);
+  --fourthColor: rgb(60, 62, 68);
+  --primaryFont: Helvetica;
+  --secondaryFont: sans-serif;
+}
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 body {
   margin: 0;
-  font-family: Helvetica, sans-serif;
-  color: white;
-  background-color: #202329;
+  font-family: var(--primaryFont), var(--secondaryFont);
+  color: var(--secondColor);
+  background-color: var(--primaryColor);
 }
 
 main {
@@ -25,7 +36,7 @@ hr {
 }
 
 pre {
-  font-family: monospace, monospace; /* 1 */
+  font-family: var(--primaryColor), var(--secondaryFont); /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -48,7 +59,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
+  font-family: var(--primaryColor), var(--secondaryFont); /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -148,39 +159,21 @@ textarea {
   overflow: auto;
 }
 
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
 
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
 [type="search"] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
-
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
 
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;

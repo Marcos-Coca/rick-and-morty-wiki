@@ -3,7 +3,7 @@
     <img [src]="character.image" [alt]="character.name" />
   </div>
   <div class="info-container">
-    <section>
+    <section class="info-section">
       <a [routerLink]="['/character', character.id]">
         <h2>{{ character.name }}</h2></a
       >
@@ -12,11 +12,11 @@
         <span>{{ character.status }} - {{ character.species }}</span>
       </span>
     </section>
-    <section>
+    <section class="info-section">
       <span class="sub-title">Last known location:</span>
       <a href="#">{{ character.origin.name }}</a>
     </section>
-    <section>
+    <section class="info-section">
       <span class="sub-title">First seen in:</span>
       <a href="#">{{ episode?.name }}</a>
     </section>

@@ -1,16 +1,17 @@
 {
-	"compilerOptions": {
-		"experimentalDecorators": true,
-		"baseUrl": "src/app",
-		"sourceMap": true
-	},
-	"files": [],
-	"references": [
-		{
-			"path": "./tsconfig.app.json"
-		},
-		{
-			"path": "./tsconfig.spec.json"
-		}
-	]
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "baseUrl": "src/app",
+    "paths": { "@variables/*": ["src/styles/*"] },
+    "sourceMap": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
 }
