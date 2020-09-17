@@ -1,10 +1,10 @@
-<article *ngIf="character$ | async as character">
+<main *ngIf="character$ | async as character">
   <div class="image-container">
     <img [src]="character.image" [alt]="character.name" />
   </div>
   <div class="info-container">
     <section>
-      <a [routerLink]="['/character', character.id]">
+      <a>
         <h2>{{ character.name }}</h2></a
       >
       <span class="status-container">
@@ -13,16 +13,26 @@
       </span>
     </section>
     <section>
-      <span class="sub-title">Origin:</span>
-      <a href="#">{{ character.origin.name }}</a>
+      <span class="sub-title">Origin: </span>
+      <a [routerLink]="['/location', character.origin.url.slice(41, 43)]">{{
+        character.origin.name
+      }}</a>
     </section>
     <section>
-      <span class="sub-title">Last known location:</span>
-      <a href="#">{{ character.location.name }}</a>
+      <span class="sub-title">Last known location: </span>
+      <a [routerLink]="['/location', character.location.url.slice(41, 43)]">{{
+        character.location.name
+      }}</a>
     </section>
     <section>
-      <span class="sub-title">First seen in:</span>
-      <a href="#">{{ episode?.name }}</a>
+      <span class="sub-title">Episodes: </span>
+      <ul>
+        <li *ngFor="let episode of episode$ | async">
+          <a [routerLink]="['/episode', episode.id]">
+            {{ episode.id }}. {{ episode.name }}
+          </a>
+        </li>
+      </ul>
     </section>
   </div>
-</article>
+</main>

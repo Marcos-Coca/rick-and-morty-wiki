@@ -21,6 +21,37 @@ h2 {
 }
 
 .image-container {
-  object-fit: cover;
   height: 100%;
+
+  & > img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 550px) {
+  article {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 0.75rem;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+  }
+  .image-container {
+    width: 100%;
+  }
+  .info-container {
+    width: 100%;
+    padding-left: 5rem;
+  }
+  .info-container > section {
+    margin-top: 1.5rem;
+  }
+  .info-container > section:first-child {
+    margin-top: 0.5rem;
+  }
+  .sub-title {
+    margin-bottom: 10px;
+  }
 }

@@ -32,6 +32,4 @@ export class CharacterService {
   getEpisode(url: string) {
     return this.http.get<Episode>(url);
   }
-
-  getAllEpisode(character: Character) {}
 }

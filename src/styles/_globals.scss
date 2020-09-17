@@ -45,3 +45,16 @@
 .status-container .unknown {
   background: rgb(158, 158, 158);
 }
+
+.characters-grid {
+  gap: 1rem;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 570px);
+
+  @media (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
+  }
+}

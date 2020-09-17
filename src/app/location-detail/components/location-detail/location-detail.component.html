@@ -1,0 +1,18 @@
+<main *ngIf="location$ | async as location">
+  <div class="Location-title">
+    <h1>{{ location.name }}</h1>
+    <h3>{{ location.dimension }}</h3>
+  </div>
+  <div
+    class="characters-grid"
+    infinite-scroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+  >
+    <app-character
+      *ngFor="let resident of residents"
+      [character]="resident"
+    ></app-character>
+  </div>
+</main>

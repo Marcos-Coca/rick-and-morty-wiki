@@ -14,11 +14,13 @@
     </section>
     <section class="info-section">
       <span class="sub-title">Last known location:</span>
-      <a href="#">{{ character.origin.name }}</a>
+      <a [routerLink]="['/location', character.location.url.slice(41, 43)]">{{
+        character.origin.name
+      }}</a>
     </section>
     <section class="info-section">
       <span class="sub-title">First seen in:</span>
-      <a href="#">{{ episode?.name }}</a>
+      <a [routerLink]="['/episode', episode?.id]">{{ episode?.name }}</a>
     </section>
   </div>
 </article>

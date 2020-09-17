@@ -10,5 +10,6 @@ import { CharacterComponent } from './components/character/character.component';
 @NgModule({
   declarations: [HomeComponent, ListOfCharactersComponent, CharacterComponent],
   imports: [CommonModule, HomeRoutingModule, InfiniteScrollModule],
+  exports: [CharacterComponent],
 })
 export class HomeModule {}

@@ -1,0 +1,17 @@
+<main *ngIf="episode$ | async as episode">
+  <div class="Episode-title">
+    <h1>{{ episode.id }}. {{ episode.name }}</h1>
+  </div>
+  <div
+    class="characters-grid"
+    infinite-scroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+  >
+    <app-character
+      *ngFor="let character of characters"
+      [character]="character"
+    ></app-character>
+  </div>
+</main>
