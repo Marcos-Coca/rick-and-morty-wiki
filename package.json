@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "postinstall": "ngcc",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng run rick-and-morty-wiki:server:production",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run rick-and-morty-wiki:serve-ssr",
+    "serve:ssr": "node dist/rick-and-morty-wiki/server/main.js",
+    "build:ssr": "ng build --prod && ng run rick-and-morty-wiki:server:production",
+    "prerender": "ng run rick-and-morty-wiki:prerender"
   },
   "private": true,
   "dependencies": {
@@ -19,9 +22,13 @@
     "@angular/forms": "~10.0.6",
     "@angular/platform-browser": "~10.0.6",
     "@angular/platform-browser-dynamic": "~10.0.6",
+    "@angular/platform-server": "~10.0.6",
     "@angular/router": "~10.0.6",
+    "@nguniversal/express-engine": "^10.0.2",
+    "express": "^4.15.2",
     "ngx-infinite-scroll": "^9.0.0",
     "rxjs": "~6.5.5",
+    "typescript": "~3.9.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
@@ -29,6 +36,8 @@
     "@angular-devkit/build-angular": "~0.1000.5",
     "@angular/cli": "~10.0.5",
     "@angular/compiler-cli": "~10.0.6",
+    "@nguniversal/builders": "^10.0.2",
+    "@types/express": "^4.17.0",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
@@ -42,7 +51,6 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~3.9.5"
+    "tslint": "~6.1.0"
   }
 }

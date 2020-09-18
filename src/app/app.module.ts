@@ -12,7 +12,7 @@ import { LayoutComponent } from './layout/layout.component';
 @NgModule({
   declarations: [AppComponent, LayoutComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
