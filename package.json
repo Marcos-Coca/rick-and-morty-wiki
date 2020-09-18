@@ -12,7 +12,8 @@
     "dev:ssr": "ng run rick-and-morty-wiki:serve-ssr",
     "serve:ssr": "node dist/rick-and-morty-wiki/server/main.js",
     "build:ssr": "ng build --prod && ng run rick-and-morty-wiki:server:production",
-    "prerender": "ng run rick-and-morty-wiki:prerender"
+    "prerender": "ng run rick-and-morty-wiki:prerender",
+    "start:heroku": "node dist/rick-and-morty-wiki/server/main.js"
   },
   "private": true,
   "dependencies": {
