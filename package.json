@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng run rick-and-morty-wiki:server:production",
+    "postinstall": "ngcc",
+    "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
